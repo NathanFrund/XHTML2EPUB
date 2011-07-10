@@ -3,7 +3,7 @@
     <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
         <dc:title></dc:title>
 				<dc:creator opf:role="aut"></dc:creator>
-        <dc:identifier id="PrimaryID">urn:uuid:98C4D67E-6C12-447D-BCEF-FF4504D43C48</dc:identifier>
+        <dc:identifier id="PrimaryID"></dc:identifier>
         <dc:language>en</dc:language>
         <meta name="cover" content="cover-image"/>
     </metadata>
