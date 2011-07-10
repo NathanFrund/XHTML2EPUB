@@ -53,8 +53,12 @@ module TOCXML
     @epub_directory = epub_directory
     @toc_doc = Nokogiri::XML(open(@epub_directory + "/OEBPS/toc.ncx"))
     
-    nav_point_list.each do |nav_point|
+    self.nav_point_list.each do |nav_point|
       self.insert_navpoint(nav_point)
     end
+    
+    toc_file = File.new(@epub_directory + "/OEBPS/toc.ncx", "w")
+    toc_file.write(@toc_doc)
+    toc_file.close
   end
 end
