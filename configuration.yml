@@ -8,10 +8,14 @@ multimarkdown_file_name: Firefight!
 master_file_name: index.html
 
 # This is the working directory for the EPUB in process. It will be created by the scripts.
-epub_directory: /Users/Nathan/Desktop/epubTest
+epub_directory: /Users/Nathan/Desktop/Firefight!EPUB 
 
 # This is the name of the EPUB file to be created.
-epub_file_name: test.epub
+epub_file_name: Firefight!.epub
 
 # This is the directory where the final EPUB file will be put.
 zip_to_directory: /Users/Nathan/Desktop
+
+# Your EPUB's UID. If you have an ISBN number then put that here.
+# If not then don't worry about it. The xhtml2epub will create one for you.
+epub_uid: 
