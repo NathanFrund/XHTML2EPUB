@@ -1,0 +1,17 @@
+# This is the full path to the directory created when compiling to MMD from Scrivener
+master_directory: /Users/Nathan/Desktop/Firefight!
+
+# This is the name of the MMD file created by Scrivener when compiling a project.
+multimarkdown_file_name: Firefight!
+
+# This is the name of the XHTML file to be created and processed by the scripts.
+master_file_name: index.html
+
+# This is the working directory for the EPUB in process. It will be created by the scripts.
+epub_directory: /Users/Nathan/Desktop/epubTest
+
+# This is the name of the EPUB file to be created.
+epub_file_name: test.epub
+
+# This is the directory where the final EPUB file will be put.
+zip_to_directory: /Users/Nathan/Desktop

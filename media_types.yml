@@ -1,0 +1,5 @@
+types: {
+	xhtml: application/xhtml+xml,
+	css: text/css,
+	png: image/png
+}

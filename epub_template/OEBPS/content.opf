@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="PrimaryID">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:title></dc:title>
+				<dc:creator opf:role="aut"></dc:creator>
+        <dc:identifier id="PrimaryID">urn:uuid:98C4D67E-6C12-447D-BCEF-FF4504D43C48</dc:identifier>
+        <dc:language>en</dc:language>
+        <meta name="cover" content="cover-image"/>
+    </metadata>
+    <manifest>
+        <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+				<item id="cover" href="Text/cover.xhtml" media-type="application/xhtml+xml"/>
+				<item id="epub-style" href="Styles/epub_style.css" media-type="text/css"/>
+				<item id="oswald-embedded-font" href="Fonts/oswaldwebfont.otf" media-type="application/x-font-opentype"/>
+				<item id="cover-image" href="Images/cover.jpg" media-type="image/jpeg"/>
+		</manifest>
+    <spine toc="ncx">
+        <itemref idref="cover" linear="yes"/>
+    </spine>
+    <guide>
+        <reference type="cover" title="Cover" href="Text/cover.xhtml"/>
+    </guide>
+</package>
