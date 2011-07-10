@@ -31,7 +31,24 @@ module TOCXML
     end
     return list
   end
+  
   public
+  def self.set_uuid(uuid, epub_directory)
+    @epub_directory = epub_directory
+    @toc_doc = Nokogiri::XML(open(@epub_directory + "/OEBPS/toc.ncx"))
+    
+    if uuid[0..8] == "urn:uuid:" then
+      uuid = uuid[9..uuid.length]
+    end
+    
+    meta_element = @toc_doc.css('meta[name="dtb:uid"]')[0]
+    meta_element['content'] = uuid
+    
+    toc_file = File.new(@epub_directory + "/OEBPS/toc.ncx", "w")
+    toc_file.write(@toc_doc)
+    toc_file.close
+  end
+  
   def self.add_chapters_to_toc(epub_directory)
     @epub_directory = epub_directory
     @toc_doc = Nokogiri::XML(open(@epub_directory + "/OEBPS/toc.ncx"))
@@ -39,9 +56,5 @@ module TOCXML
     nav_point_list.each do |nav_point|
       self.insert_navpoint(nav_point)
     end
-    
-    toc_file = File.new(@epub_directory + "/OEBPS/toc.ncx", "w")
-    toc_file.write(@toc_doc)
-    toc_file.close
   end
 end

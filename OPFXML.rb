@@ -65,12 +65,27 @@ module OPFXML
     html_author_elements = html.css('html head meta[name="author"]')
     
     html_author_elements.each do |html_element|
-      cloned_creator_element = creator_element.clone
-      cloned_creator_element.content = html_element['content']
-      opf_metadata.children.before(cloned_creator_element)
+      author_name = html_element['content']
+      xpath_selector = "//dc:creator[text() = '#{author_name}']"
+      check_element = opf_metadata.xpath(xpath_selector, 'dc' => 'http://purl.org/dc/elements/1.1/')[0]
+      
+      if check_element.nil?
+        cloned_creator_element = creator_element.clone
+        cloned_creator_element.content = html_element['content']
+        opf_metadata.children.before(cloned_creator_element)
+      end
+       
     end
     
-    creator_element.remove() if opf_metadata.xpath('//dc:creator', 'dc' => 'http://purl.org/dc/elements/1.1/').count > 0
+    creator_element.remove() if opf_metadata.xpath('//dc:creator', 'dc' => 'http://purl.org/dc/elements/1.1/')[0].content == ""
+    self.write_content_opf()
+  end
+  
+  def self.set_uuid(uuid, epub_directory)
+    @manifest_doc = Nokogiri::XML(open(epub_directory + "/OEBPS/content.opf"))
+    opf_metadata = @manifest_doc.css('package metadata')
+    identifier_element = opf_metadata.xpath('//dc:identifier', 'dc' => 'http://purl.org/dc/elements/1.1/')[0]
+    identifier_element.content = uuid
     self.write_content_opf()
   end
   
