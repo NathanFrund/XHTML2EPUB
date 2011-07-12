@@ -1,10 +1,10 @@
 # This is the full path to the directory created when compiling to MMD from Scrivener
 master_directory: /Users/Nathan/Desktop/Firefight!
 
-# This is the name of the MMD file created by Scrivener when compiling a project.
+# This is the name of the MMD file created by Scrivener when compiling a project. It is proccessed by mmd2xhtml.
 multimarkdown_file_name: Firefight!
 
-# This is the name of the XHTML file to be created and processed by the scripts.
+# This is the name of the XHTML file to be created and processed by xhtml2epub.
 master_file_name: index.html
 
 # This is the working directory for the EPUB in process. It will be created by the scripts.
