@@ -16,6 +16,7 @@ epub_file_name: Firefight!.epub
 # This is the directory where the final EPUB file will be put.
 zip_to_directory: /Users/Nathan/Desktop
 
-# Your EPUB's UID. If you have an ISBN number then put that here.
-# If not then don't worry about it. The xhtml2epub will create one for you.
+# Your EPUB's UID. 
+# If this is left blank then xhtml2epub will create one for you.
+# If you have an ISBN number then put that here.
 epub_uid: 
